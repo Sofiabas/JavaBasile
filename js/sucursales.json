@@ -1,0 +1,23 @@
+[
+{
+    "id":1,
+    "imagen":"/img/sucursal 1.jpg",
+    "Nombre": "Ice Pin Sucursal Barrio Norte",
+    "Direccion": "Junin 308",
+    "Empleados": "Juan Perez, Ines Martinez, Luciano Rodriguez, Martin Solari"
+},
+{
+    "id":2,
+    "imagen":"/img/sucursal 2.jpg",
+    "Nombre": "Ice Pin Sucursal Sur",
+    "Direccion": "Viamonte 701",
+    "Empleados": "Luana Viola, Camila Grotini, Bruno Gandolfi, Gabriel Metz"
+},
+{
+    "id":2,
+    "imagen":"/img/sucursal 3.jpg",
+    "Nombre": "Ice Pin Sucursal Centro",
+    "Direccion": "Entre Rios 305",
+    "Empleados": "Dario Bernardeti, Azul Luchetti, Francisca Garrera, Maximiliano Lopez"
+}
+]

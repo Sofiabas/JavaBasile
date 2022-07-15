@@ -1,0 +1,236 @@
+*{
+  margin: 0;padding: 0;
+  box-sizing: border-box;
+ font-family:"static" ;
+ 
+}
+     
+@font-face {
+  font-family:"static" ;
+  src: url(/static/Caveat-SemiBold.ttf);
+  font-display: swap  
+}
+li{
+ list-style: none;
+}
+
+nav{
+  font-size: 25px;
+}
+
+h1{
+font-size: 50px;
+}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+.fondo {
+
+background: linear-gradient(to right ,#4894b8, #37D5D6 );
+  }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        
+      }
+
+      .nav-link{
+        color: rgb(41, 1, 1);
+      }
+  
+/* Botones */
+.css-button-sliding-to-left--sky {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #4433ff;
+  color: #4e41db;
+}
+.css-button-sliding-to-left--sky:hover {
+  color: rgb(255, 255, 255);
+}
+.css-button-sliding-to-left--sky:hover:after {
+  width: 100%;
+}
+.css-button-sliding-to-left--sky:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #045b8d;
+}
+
+/* Bordes */
+.solid {
+  border-style: solid;
+
+border-width: 3px
+}
+   
+/* Boton Inicio*/
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #48C3EB;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+  .btn:hover {
+    background: #378bbf;
+    background-image: -webkit-linear-gradient(top, #378bbf, #2a516b);
+    background-image: -moz-linear-gradient(top, #378bbf, #2a516b);
+    background-image: -ms-linear-gradient(top, #378bbf, #2a516b);
+    background-image: -o-linear-gradient(top, #378bbf, #2a516b);
+    background-image: linear-gradient(to bottom, #378bbf, #2a516b);
+    text-decoration: none;
+  }
+
+/* Checkout */
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+
+}
+
+.style{
+  width: 18rem
+}
+.margen{
+  margin-right: 30px;
+}
+
+.margen1{
+  text-align: center;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.margen2{
+  text-align: center;
+margin-top: 60px;
+margin-bottom: 40px;
+font-size: 2rem;
+}
+
+.tamanio{
+  width: 40px;
+  height: 20px;
+}
