@@ -57,7 +57,6 @@ inputCvv.addEventListener("input", () => {
 
 
 function guardarDatos() {
-    debugger
     const DatosDeUsuario = {
         nombre: inputNombre.value,
         apellido: inputApellido.value,

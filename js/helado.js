@@ -1,10 +1,3 @@
-
-function saludar() {
-  return "Hola Amigos"
-}
-
-
-
 let producto = ("Elija Paleta de Agua, Cafe helado, Sundae, Palito Bombon, Bandeja, Churros")
 
 switch (producto) {
@@ -31,18 +24,8 @@ switch (producto) {
     break;
 }
 
-function calcular() {
-  debugger
-  let primerNro = prompt("Ingresa el primer precio:")
-  let segundoNro = prompt("Ingresa el segundo precio:")
-  let resultado = realizarCalculo(primerNro, segundoNro)
-  console.log("Resultado:", resultado)
-
-  saludar()
-}
 
 const IVA = 1.21
-
 
 class Producto {
   constructor(id, nombre, precio, stock) {
@@ -107,7 +90,8 @@ function generadorAutomatico() {
 generadorAutomatico()
 
 const Clickbutton = document.querySelectorAll('button')
-const contenedor = document.getElementById ("contenedor")
+const contenedor = document.getElementById("contenedor")
+
 
 
 Clickbutton.forEach(btn => {
@@ -138,7 +122,6 @@ function AgregarAlCarrito(NuevoItem) {
   renderCarrito()
 }
 
-
 function renderCarrito() {
   contenedor.innerHTML =""
   carrito.map(item => {
@@ -147,14 +130,14 @@ function renderCarrito() {
      Content += `
     <li class="list-group-item d-flex justify-content-between lh-sm" >
     <div>
-      <h6 class="my-0">${item.nombre}</h6>
+      <h6 class="my-0 shoppingCartItem">${item.nombre}</h6>
       <small class="text-muted"></small>
     </div>
-    <span class="text-muted">${item.precio}</span>
-    <input class="tamanio" type="number" min="1" value=${item.cantidad}>
+    <span class="text-muted shoppingCartItemPrice">${item.precio}</span>
+    <input class="tamanio shoppingCartItemQuantity" type="number" min="1" value=${item.cantidad}>
     <button class="delete btn btn-danger">x</button>
   `
     })
-    contenedor.innerHTML = Content
+    contenedor.innerHTML = Content 
   })
 }
