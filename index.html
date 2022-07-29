@@ -15,24 +15,19 @@
   <script defer src="js/dom.js"></script>
   <script defer src="js/contenido.js"></script>
   <script defer src="js/variables.js"></script>
-  <script defer src="js/animacion.js"></script>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
   <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-
-
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Keywords -->
   <meta name="keywords" content="Helado, Smoothie, Milkshake, frio">
   <!-- Descripcion del Sitio -->
   <meta name="description" content="Veni a probrar los mejores sabores  la Argentina">
 </head>
 
-<body class="d-flex h-100 text-center fondo">
+<body class="d-flex h-100 text-center fondo back">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
       <div>
@@ -45,8 +40,8 @@
       </div>
     </header>
     <main class="px-3">
-      <h1 id="titulo"> ICE PIN </h1>
-      <img src="./img/450_1000.jpg" class="img-fluid" alt="inicio">
+      <h1 id="titulo" class="animate__heartBeat"> ICE PIN </h1>
+      <img src="img/450_1000.jpg" class="img-fluid" alt="inicio">
       <p id="slogan" class="lead m-3"> Disfruta de los mejores helados de Argentina, aptos para todos los momentos de tu
         vida.
         Tentate con los nuevos sabores y todos nuestros productos. </p>
@@ -54,76 +49,76 @@
         <a href="#pedir" class="btn btn-lg btn-secondary fw-bold border-white text-black button ">Pedí Ya</a>
       </p>
     </main>
-    
+
     <!-- Inicio Productos y Pedidos -->
-    <div  id="listadoHeladeria" >
+<div  id="listadoHeladeria" >
     <div class="container margen1" id="pedir">
       <div class="row">
         <div class="col">
-          <div class="card style">
-            <img src="./img/paletas agua.jpg" class="card-img-top solid" alt="header">
+          <div class="card style item ">
+            <img src="/img/paletas agua.jpg" class="card-img-top solid" alt="header">
             <div class="card-body">
-              <h5 class="card-title">Paleta Frutal</h5>
-              <h6 class="text-primary">Precio: <span class="precio">$ 70</span></h6>
-              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky">PEDIR</button>
+              <h5 class="card-title item-title">Paleta Frutal</h5>
+              <h6 class="text-primary">Precio: <span>$</span> <span class="precio item-price"> 70</span></h6>
+              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky addToCart">PEDIR</button>
             </div>
           </div>
         </div>
 
         <div class="col">
 
-          <div class="card style">
-            <img src="./img/cafe helado.jpg" class="card-img-top solid" alt="cafe helado">
+          <div class="card style item">
+            <img src="/img/cafe helado.jpg" class="card-img-top solid" alt="cafe helado">
             <div class="card-body">
-              <h5 class="card-title">Cafe Helado</h5>
-              <h6 class="text-primary">Precio: <span class="precio">$ 250 </span></h6>
-              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky">PEDIR</button>
+              <h5 class="card-title item-title">Cafe Helado</h5>
+              <h6 class="text-primary">Precio: <span>$</span> <span class="precio item-price"> 250 </span></h6>
+              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky addToCart">PEDIR</button>
             </div>
           </div>
         </div>
 
         <div class="col">
 
-          <div class="card style">
-            <img src="./img/sundae.jpg" class="card-img-top solid" alt="sundae">
+          <div class="card style item">
+            <img src="/img/sundae.jpg" class="card-img-top solid" alt="sundae">
             <div class="card-body">
-              <h5 class="card-title">Sundae</h5>
-              <h6 class="text-primary">Precio: <span class="precio">$ 250 </span></h6>
-              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky">PEDIR</button>
+              <h5 class="card-title item-title">Sundae</h5>
+              <h6 class="text-primary">Precio: <span>$</span> <span class="precio item-price">250 </span></h6>
+              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky addToCart">PEDIR</button>
             </div>
           </div>
         </div>
         <div class="col">
 
-          <div class="card style">
-            <img src="./img/palito bombon2.jpg" class="card-img-top solid" alt="palito bombon">
+          <div class="card style item">
+            <img src="/img/palito bombon2.jpg" class="card-img-top solid" alt="palito bombon">
             <div class="card-body">
-              <h5 class="card-title"> Palito Bombon </h5>
-              <h6 class="text-primary">Precio: <span class="precio">$ 80 </span></h6>
-              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky">PEDIR</button>
+              <h5 class="card-title item-title"> Palito Bombon </h5>
+              <h6 class="text-primary">Precio: <span>$</span> <span class="precio item-price">80 </span></h6>
+              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky addToCart">PEDIR</button>
             </div>
           </div>
         </div>
 
         <div class="col">
 
-          <div class="card style">
-            <img src="./img/churros-2188869_1280.jpg" class="card-img-top solid" alt="churros">
+          <div class="card style item">
+            <img src="/img/churros-2188869_1280.jpg" class="card-img-top solid" alt="churros">
             <div class="card-body">
-              <h5 class="card-title">Churros con Chocolate</h5>
-              <h6 class="text-primary">Precio: <span class="precio">$ 250 </span></h6>
-              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky"> PEDIR</button>
+              <h5 class="card-title item-title">Churros con Chocolate</h5>
+              <h6 class="text-primary">Precio: <span>$</span> <span class="precio item-price"> 250 </span></h6>
+              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky addToCart agregado"> PEDIR</button>
             </div>
           </div>
         </div>
         <div class="col">
 
-          <div class="card style">
-            <img src="./img/bandeja helada.jpg" class="card-img-top solid" alt="bandeja">
+          <div class="card style item">
+            <img src="/img/bandeja helada.jpg" class="card-img-top solid" alt="bandeja">
             <div class="card-body">
-              <h5 class="card-title"> Bandeja Helada</h5>
-              <h6 class="text-primary">Precio: <span class="precio">$ 200</span></h6>
-              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky">PEDIR</button>
+              <h5 class="card-title item-title"> Bandeja Helada</h5>
+              <h6 class="text-primary">Precio: <span>$</span> <span class="precio item-price">200</span></h6>
+              <button type="button" class="btn btn-primary css-button-sliding-to-left--sky addToCart">PEDIR</button>
             </div>
           </div>
         </div>
@@ -131,7 +126,7 @@
     </div>
 </div>
     <!-- Fin Productos y Pedidos -->
-    
+
     <!--Checkout-->
     <div class="container">
       <main>
@@ -140,30 +135,28 @@
           <p class="lead"> Dale! Apurate y finalizá tu pedido para disfrutar de los mejores productos del mercado</p>
         </div>
 
-        <div class="row g-5">
+        <div class="row g-5 ">
           <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-              <span class="text-primary">Tu carrito</span>
-              <span> <img class="" src="./img/carrito-de-compras.png" alt="carrito"></span>
-            </h4> 
-             <div id="contenedor">
-            <ul class="list-group mb-3" id="listadoCarrito">
-        
-            </div>    
+              <span class="">Tu carrito</span>
+              <span> <img class="" src="/img/carrito-de-compras.png" alt="carrito"></span>
+            </h4>
+            <div>
+            <ul class="list-group mb-3 contenedorCarrito" id="listadoCarrito">
+            
             </ul>
+            </div>
             <ul>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <li class="list-group-item d-flex justify-content-between">
-                <span class="itemCartTotal">Total (ARS)</span>
-                <strong>$</strong>
-              </li>
-              </li>
-            </ul>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <li class="list-group-item d-flex justify-content-between">
+                 <span class="tamanio2"> Total (ARS) $</span> <span class="totalCarrito tamanio3"> 0</span>
+                </li>
+                </li>
+              </ul>
             <form class="card p-2">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Promo code">
                 <button type="submit" class="btn btn-secondary">Pagar</button>
-                <button type="button" class="btn btn-secondary">Vaciar Carrito</button>
               </div>
             </form>
           </div>
@@ -327,11 +320,10 @@
         </div>
       </main>
       <div id="cargando">
-      <div id="contenido" class="col d-flex justify-content-center mt-5"> 
-     
-            <!-- Contenido desde API -->
-       
-      </div>
+        <div id="contenido" class="col d-flex justify-content-center mt-5"> 
+    <!-- Contenido desde API -->  
+  
+  </div>
 </div>
       <!-- Inicio Footer -->
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -376,7 +368,6 @@
       </div>
 
       <script src="js/bootstrap.js"> </script>
-   
 </body>
 
 </html>

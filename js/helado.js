@@ -1,32 +1,3 @@
-let producto = ("Elija Paleta de Agua, Cafe helado, Sundae, Palito Bombon, Bandeja, Churros")
-
-switch (producto) {
-  case "PALETA AGUA":
-    console.log("Tenemos en stock Paletas de Agua", producto)
-    break;
-  case "CAFE HELADO":
-    console.log("Tenemos en stock Café Helado", producto)
-    break;
-  case "SUNDAE":
-    console.log("Tenemos en stock Sundae", producto)
-    break;
-  case "PALITO BOMBON":
-    console.log("Tenemos en stock Palito Bombon", producto)
-    break;
-  case "BANDEJA":
-    console.log("Tenemos en stock Bandeja", producto)
-    break;
-  case "CHURROS CON CHOCOLATE":
-    console.log("No tenemos en stock Churros", producto)
-    break;
-  default:
-    console.warn("No contamos con Churros, pero puedo ofrecer otra cosa")
-    break;
-}
-
-
-const IVA = 1.21
-
 class Producto {
   constructor(id, nombre, precio, stock) {
     this.id = id
@@ -34,15 +5,10 @@ class Producto {
     this.precio = precio
     this.stock = stock
   }
-  precioFinal() {
-    return parseFloat((this.precio * IVA).toFixed(2))
-  }
 }
 
 const productos = []
 const carrito = []
-
-
 
 //Agregar Producto
 
@@ -89,55 +55,134 @@ function generadorAutomatico() {
 }
 generadorAutomatico()
 
-const Clickbutton = document.querySelectorAll('button')
-const contenedor = document.getElementById("contenedor")
+function generarCarrito() {
+  carrito.push(new Producto(123, "Paleta de Agua", 70, 80))
+  carrito.push(new Producto(567, "Cafe Helado", 250, 200))
+  carrito.push(new Producto(891, "Sundae", 250, 250))
+}
+generarCarrito()
+
+const botonCarrito = document.querySelectorAll('.addToCart');
+botonCarrito.forEach((botonAgregar) => {
+  botonAgregar.addEventListener('click',botonClick);
+});
+
+const contenedorCarrito = document.querySelector(
+  '.contenedorCarrito'
+);
 
 
+function botonClick(event) {
+  const button = event.target;
+  const item = button.closest('.item');
+  const itemTitle = item.querySelector('.item-title').textContent;
+  const itemPrice = item.querySelector('.item-price').textContent;
+  
+  agregarAlCarrito(itemTitle,itemPrice);
+}
 
-Clickbutton.forEach(btn => {
-  btn.addEventListener('click', addToCarritoItem)
-})
-
-function addToCarritoItem(e) {
-  const button = e.target
-  const item = button.closest('.card')
-  const itemNombre = item.querySelector('.card-title').textContent;
-  const itemPrecio = item.querySelector('.precio').textContent;
-  const itemImg = item.querySelector('.card-img-top').src;
-
-
-  const NuevoItem = {
-    nombre: itemNombre,
-    precio: itemPrecio,
-    img: itemImg,
-    cantidad: 1
+function agregarAlCarrito(itemTitle,itemPrice) {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'success',
+    title: 'Se ha agregado al carrito'
+  })
+const tituloselemento = contenedorCarrito.getElementsByClassName('tituloitem')
+for  (let i = 0 ; i < tituloselemento.length; i++){
+  if (tituloselemento[i].textContent === itemTitle) {
+    let cantidadElemento = tituloselemento[i].parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
+    cantidadElemento.value++;
+    actualizarTotal()
+    return;
   }
-
-  AgregarAlCarrito(NuevoItem)
 }
-
-function AgregarAlCarrito(NuevoItem) {
-
-  carrito.push(NuevoItem)
-  renderCarrito()
-}
-
-function renderCarrito() {
-  contenedor.innerHTML =""
-  carrito.map(item => {
-    let Content = ""
-    carrito.forEach(item => {
-     Content += `
-    <li class="list-group-item d-flex justify-content-between lh-sm" >
+  const filaCarrito= document.createElement('div');
+  const shoppingCartContent = `  
+  <div class="shoppingCartItem">
+  <ul class="list-group mb-3 contenedorCarrito" id="listadoCarrito">
+  <li class="list-group-item d-flex justify-content-between lh-sm">
     <div>
-      <h6 class="my-0 shoppingCartItem">${item.nombre}</h6>
+      <h6 class="my-0 p-2  tamanio2 tituloitem">${itemTitle}</h6>
       <small class="text-muted"></small>
     </div>
-    <span class="text-muted shoppingCartItemPrice">${item.precio}</span>
-    <input class="tamanio shoppingCartItemQuantity" type="number" min="1" value=${item.cantidad}>
-    <button class="delete btn btn-danger">x</button>
-  `
-    })
-    contenedor.innerHTML = Content 
-  })
+    <strong class=" my-0 p-2 tamanio2">$</strong>
+    <span class="text-muted my-0 p-2 tamanio2 precioCarrito">${itemPrice}</span>
+    <div
+    class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom ">
+    <input class="shopping-cart-quantity-input shoppingCartItemQuantity tamanio p-2" type=""
+        value="1">
+    <button class="btn btn-danger btnDelete " type="button">X</button>
+</div>
+  </li>
+</ul>
+</div>`;
+filaCarrito.innerHTML = shoppingCartContent;
+contenedorCarrito.append(filaCarrito);
+filaCarrito.querySelector('.btnDelete').addEventListener('click',removerItemCarrito);
+filaCarrito.querySelector('.shoppingCartItemQuantity').addEventListener('change', cambioCantidad);
+actualizarTotal();
+
 }
+
+function actualizarTotal() {
+  let total = 0;
+  const totalCarrito = document.querySelector('.totalCarrito');
+  const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+shoppingCartItems.forEach((shoppingCartItem)=> {
+const precioItemCarrito = shoppingCartItem.querySelector('.precioCarrito');
+const precioCarrito = Number( precioItemCarrito.textContent
+  );
+    const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
+      '.shoppingCartItemQuantity'
+    );
+    const shoppingCartItemQuantity = Number(
+      shoppingCartItemQuantityElement.value
+    );
+    total = total + precioCarrito * shoppingCartItemQuantity;
+  }); 
+  totalCarrito.innerHTML = `${total}`;
+}
+
+function removerItemCarrito(event){
+  const buttonClicked = event.target;
+  buttonClicked.closest('.shoppingCartItem').remove();
+    const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'error',
+    title: 'Se ha eliminado del carrito'
+  })
+  actualizarTotal()
+}
+
+function cambioCantidad(event){
+  const input = event.target;
+  if (input.value<=0){
+    input.value = 1;
+  }
+  actualizarTotal();
+}
+
+

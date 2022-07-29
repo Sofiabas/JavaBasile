@@ -10,9 +10,6 @@
   src: url(/static/Caveat-SemiBold.ttf);
   font-display: swap  
 }
-li{
- list-style: none;
-}
 
 nav{
   font-size: 25px;
@@ -22,6 +19,10 @@ h1{
 font-size: 50px;
 }
 
+.fondo {
+ background: radial-gradient(ellipse at 0%,#009ba3, rgba(29, 127, 255, 0.746))
+  }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -29,10 +30,7 @@ font-size: 50px;
         -moz-user-select: none;
         user-select: none;
       }
-.fondo {
 
-background: linear-gradient(to right ,#4894b8, #37D5D6 );
-  }
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -73,8 +71,7 @@ background: linear-gradient(to right ,#4894b8, #37D5D6 );
         margin-top: -1px;
         overflow-x: auto;
         text-align: center;
-        white-space: nowrap;
-        
+        white-space: nowrap;      
       }
 
       .nav-link{
@@ -136,8 +133,8 @@ border-width: 3px
   letter-spacing: 1.3px;
   font-weight: 700;
   color: #313133;
-  background: #48C3EB;
-background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  background: #3feae7;
+background: linear-gradient(50deg, #009ba3 0%, rgba(29, 127, 255, 0.746) 100%);
   border: none;
   border-radius: 1000px;
   box-shadow: 12px 12px 24px rgba(79,209,197,.64);
@@ -207,7 +204,6 @@ background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 10
   overflow-x: auto;
   text-align: center;
   white-space: nowrap;
-
 }
 
 .style{
@@ -223,14 +219,17 @@ margin-top: 10px;
 margin-bottom: 10px;
 }
 
-.margen2{
-  text-align: center;
-margin-top: 60px;
-margin-bottom: 40px;
-font-size: 2rem;
-}
-
 .tamanio{
   width: 40px;
   height: 20px;
+  margin-right: 10px;
 }
+
+.tamanio2{
+  font-size: 20px;
+  }
+  
+.tamanio3{
+    font-size: 20px;
+    margin-right: 100px;
+  }

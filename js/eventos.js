@@ -19,10 +19,12 @@ document.addEventListener("submit", (evento) => {
     Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Pedido Enviado',
+        title: 'Su compra se ha realizado con éxito',
         showConfirmButton: false,
         timer: 3000
       })
+      contenedorCarrito.innerHTML='';
+      actualizarTotal()
 })
 
 inputNombre.addEventListener("input", () => {
@@ -57,6 +59,7 @@ inputCvv.addEventListener("input", () => {
 
 
 function guardarDatos() {
+    debugger
     const DatosDeUsuario = {
         nombre: inputNombre.value,
         apellido: inputApellido.value,
@@ -89,3 +92,4 @@ if(localStorage.getItem("DatosDeUsuario")){
 }
 
 recuperoDatos()
+
